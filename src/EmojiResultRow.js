@@ -5,11 +5,13 @@ import "./EmojiResultRow.css";
 export default class EmojiResultsRow extends PureComponent {
   static propTypes = {
     title: PropTypes.string,
-    symbol: PropTypes.string
+    symbol: PropTypes.string,
   };
 
   render() {
     const codePointHex = this.props.symbol.codePointAt(0).toString(16);
+
+    // Do they have good enough Internet in Olso?
     const src = `//cdn.jsdelivr.net/emojione/assets/png/${codePointHex}.png`;
     return (
       <div
